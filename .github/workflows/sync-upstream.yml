@@ -2,7 +2,7 @@ name: Sync All Branches and Tags from Upstream
 
 on:
   schedule:
-    - cron: '0 8 20 * *' # Runs daily at 2 AM UTC
+    - cron: '0 8 30 * *' # Runs daily at 2 AM UTC
   workflow_dispatch:     # Allows manual triggering
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
           git config --global user.email "codebymohit@gmail.com"
 
       - name: Add upstream repository
-        run: git remote add upstream https://github.com/safe-global/safe-wallet-monorepo.git
+        run: git remote add upstream https://github.com/ethereum/go-ethereum
 
       - name: Fetch all branches and tags from upstream
         run: |
